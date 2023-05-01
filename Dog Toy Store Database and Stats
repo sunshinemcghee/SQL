@@ -1,0 +1,64 @@
+--Create a dog toy store database
+
+CREATE TABLE dogtoys 
+(id INTEGER PRIMARY KEY, 
+name TEXT, 
+price INTEGER,
+age INTEGER, 
+fillable TEXT, 
+material TEXT, 
+type_of_play TEXT);
+
+INSERT INTO dogtoys VALUES (1, "lambchop", 8, "any", "no", "plush", "cuddle");
+INSERT INTO dogtoys VALUES (2, "trex", 7, "any", "no", "plush", "cuddle");
+INSERT INTO dogtoys VALUES (3, "holiday trex", 9, "any", "no", "plush", "cuddle");
+INSERT INTO dogtoys VALUES (4, "vacation trex", 9, "any", "no", "plush", "cuddle");
+INSERT INTO dogtoys VALUES (5, "frisbee", 5, "any", "no", "plastic", "fetch");
+INSERT INTO dogtoys VALUES (6, "tennis ball", 4, "any", "no", "rubber", "fetch");
+INSERT INTO dogtoys VALUES (7, "soccer ball", 15, "any", "no", "rubber", "chase");
+INSERT INTO dogtoys VALUES (8, "keys", 8, "puppy", "no", "rubber", "chew");
+INSERT INTO dogtoys VALUES (9, "duck", 10, "any", "no", "crinkle", "chew");
+INSERT INTO dogtoys VALUES (10, "kong", 20, "any", "yes", "rubber", "chew");
+INSERT INTO dogtoys VALUES (11, "pizza", 10, "any", "no", "crinkle", "chew");
+INSERT INTO dogtoys VALUES (12, "ring pop", 10, "any", "no", "plush", "chew");
+INSERT INTO dogtoys VALUES (13, "pineapple frisbee", 8, "any", "no", "crinkle", "chew");
+INSERT INTO dogtoys VALUES (14, "cuddle pup", 20, "puppy", "no", "plush", "cuddle");
+INSERT INTO dogtoys VALUES (15, "kong ball", 15, "any", "no", "rubber", "chew");
+
+--display all data in the database.
+SELECT * FROM dogtoys;
+
+--display the database ordered by price (descending).
+SELECT name, price FROM dogtoys ORDER BY price DESC;
+
+--display the database ordered by price (ascending).
+SELECT name, price FROM dogtoys ORDER BY price ASC;
+
+--display the names of the toys in the database grouped by material.
+SELECT name, material FROM dogtoys ORDER BY material;
+
+--what is the avg price of items? 
+SELECT AVG(price) FROM dogtoys;
+
+--what is the avg price of crinkle material toys? 
+SELECT material,AVG(price) FROM dogtoys WHERE material='crinkle';
+
+--what is the avg price of plush material toys? 
+SELECT material,AVG(price) FROM dogtoys WHERE material='plush';
+
+--what is the avg price of rubber material toys? 
+SELECT material,AVG(price) FROM dogtoys WHERE material='rubber';
+
+--what is the avg price of plastic material toys? 
+SELECT material,AVG(price) FROM dogtoys WHERE material='plastic';
+
+--what is the min price of items?
+SELECT MIN(price) FROM dogtoys;
+
+--what is the max price of items?
+SELECT MAX(price) FROM dogtoys;
+
+--display all information in the database that pertains to puppy toys. 
+SELECT * FROM dogtoys WHERE age='puppy';
+
+
