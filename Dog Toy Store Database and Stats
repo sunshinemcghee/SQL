@@ -1,13 +1,14 @@
 --Create a dog toy store database
 
-CREATE TABLE dogtoys 
-(id INTEGER PRIMARY KEY, 
+CREATE TABLE dogtoys (
+id INTEGER PRIMARY KEY, 
 name TEXT, 
 price INTEGER,
 age INTEGER, 
 fillable TEXT, 
 material TEXT, 
-type_of_play TEXT);
+type_of_play TEXT
+);
 
 INSERT INTO dogtoys VALUES (1, "lambchop", 8, "any", "no", "plush", "cuddle");
 INSERT INTO dogtoys VALUES (2, "trex", 7, "any", "no", "plush", "cuddle");
